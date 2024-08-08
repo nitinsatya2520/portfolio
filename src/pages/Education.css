@@ -1,0 +1,94 @@
+.education-section {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    text-align: center;
+    margin-top: 90px;
+}
+
+.education-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: 600;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.education-item {
+    background: #fff;
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+}
+
+.education-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.education-logo {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.education-details h3 {
+    margin-top: 0;
+    font-size: 1.75rem;
+    color: #0073e6;
+    margin-bottom: 10px;
+}
+
+.education-details p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.education-details p strong {
+    font-size: 1.25rem;
+    color: #333;
+}
+
+/* Dark Mode Support */
+.dark-mode .education-section {
+    background-color: #2d3748; /* Dark background for the section */
+}
+
+.dark-mode .education-section h2 {
+    color: #cbd5e0; /* Light color for the section title */
+}
+
+.dark-mode .education-item {
+    background: #4a5568; /* Darker background for education items */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Darker shadow */
+}
+
+.dark-mode .education-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Darker hover shadow */
+}
+
+.dark-mode .education-details h3 {
+    color: #63b3ed; /* Lighter color for institution names */
+}
+
+.dark-mode .education-details p {
+    color: #e2e8f0; /* Lighter text for details */
+}
+
+.dark-mode .education-details p strong {
+    color: #edf2f7; /* Light color for highlighted text */
+}

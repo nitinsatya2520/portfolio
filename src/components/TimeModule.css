@@ -1,0 +1,49 @@
+/* General Styles */
+.time-module {
+  background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background for contrast */
+  padding: 40px 10px;
+  position: fixed;
+  bottom: 210px;
+  right: 4px; /* Position it on the right side */
+  width: fit-content;
+  border-radius: 75px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 10px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  animation: fadeIn 4s ease-in;
+}
+
+.time-module:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.time-module p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .time-module {
+    padding: 15px 10px; /* Adjusted padding for better touch interaction */
+    font-size: 1rem; /* Slightly smaller font size for mobile */
+    bottom: 160px; /* Adjusted position from the bottom */
+    right: 10px; /* Adjusted position from the right */
+    border-radius: 50px; /* Slightly smaller border radius for mobile */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Less pronounced shadow for mobile */
+  }
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

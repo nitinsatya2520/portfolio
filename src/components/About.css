@@ -1,0 +1,97 @@
+/* About.css */
+#about {
+  padding: 2rem;
+  margin-bottom: 3rem;
+  background: url('../assets/nitin.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-top: 100px;
+  height: 100%;
+}
+
+#about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+#about > * {
+  position: relative;
+  z-index: 1;
+}
+
+#about:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#about h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  border-bottom: 2px solid #61dafb;
+  padding-bottom: 0.5rem;
+}
+
+#about p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Dark Mode Support */
+.dark-mode #about {
+  background: url('../assets/nitin.jpg') no-repeat center center;
+  background-size: cover;
+  color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode #about::before {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode #about h2 {
+  border-bottom: 2px solid #82caff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #about {
+    padding: 1.5rem;
+  }
+
+  #about h2 {
+    font-size: 1.8rem;
+  }
+
+  #about p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #about {
+    padding: 1rem;
+  }
+
+  #about h2 {
+    font-size: 1.6rem;
+  }
+
+  #about p {
+    font-size: 0.9rem;
+  }
+}

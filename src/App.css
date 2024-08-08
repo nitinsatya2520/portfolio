@@ -1,38 +1,260 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background: #f4f4f4;
+  color: #333;
+  scroll-behavior: smooth;
+  background-image: linear-gradient(180deg, rgba(255,0,0,0), rgb(1, 0, 15));
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+.dark-mode body {
+  background: #181818;
+  color: #e0e0e0;
+}
+
+header {
+  background: #282c34;
+  color: #fff;
+  padding: 1rem 0;
   text-align: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dark-mode header {
+  background: #121212;
+  color: #e0e0e0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: #61dafb;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.dark-mode nav ul li a {
+  color: #82caff;
+}
+
+nav ul li a:hover {
+  color: #21a1f1;
+}
+
+.dark-mode nav ul li a:hover {
+  color: #a1c4fd;
+}
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode section {
+  background: #1f1f1f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  border-bottom: 2px solid #61dafb;
+  padding-bottom: 0.5rem;
+}
+
+.dark-mode section h2 {
+  border-bottom: 2px solid #82caff;
+}
+
+section p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+section div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+section div > div {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dark-mode section div > div {
+  background: #2c2c2c;
+}
+
+section div > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  background: #282c34;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode footer {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+form label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
-@keyframes App-logo-spin {
+form input,
+form textarea {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+form button {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background: #61dafb;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.dark-mode form button {
+  background: #82caff;
+}
+
+form button:hover {
+  background: #21a1f1;
+  transform: translateY(-3px);
+}
+
+.dark-mode form button:hover {
+  background: #5da1c3;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Applying animations */
+header, section, footer {
+  animation: fadeIn 1.2s ease-in;
+}
+
+section {
+  animation: slideIn 2s ease-in;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav ul li {
+    margin: 0 0.5rem;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+  }
+
+  section div {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 1rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  form button {
+    font-size: 1rem;
   }
 }

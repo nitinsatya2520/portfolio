@@ -1,0 +1,109 @@
+/* src/components/ToggleDarkModeButton.css */
+
+.toggle-dark-mode-button {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    z-index: 1000; /* Ensure it is on top of other elements */
+  }
+  
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #61dafb;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  /* Optional: Adjust icon styles if needed */
+  .toggle-dark-mode-button svg {
+    width: 2rem;
+    height: 2rem;
+    fill: #61dafb;
+    margin-right: 0.5rem;
+  }
+  
+  .dark-mode .slider {
+    background-color: #82caff;
+  }
+  
+  .dark-mode .toggle-dark-mode-button svg {
+    fill: #fff;
+  }
+  
+  @media (max-width: 480px) {
+    .toggle-dark-mode-button {
+      top: 0.25rem;
+      right: 0.25rem;
+    }
+  
+    .toggle-switch {
+      width: 18px; /* Even smaller switch */
+      height: 18px; /* Even smaller switch */
+    }
+  
+    .slider:before {
+      height: 18px; /* Even smaller handle */
+      width: 18px; /* Even smaller handle */
+    }
+  
+    input:checked + .slider:before {
+      transform: translateX(16px); /* Adjust handle position */
+    }
+  
+    .toggle-dark-mode-button svg {
+      width: 0.75rem; /* Even smaller icon */
+      height: 0.75rem; /* Even smaller icon */
+    }
+  }

@@ -1,0 +1,107 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #1e3a8a; /* Dark blue background */
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  margin-top: 30px;
+  gap: 1.5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-links li {
+  cursor: pointer;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #10b981; /* Emerald color */
+}
+
+/* Dark Mode Styles */
+.dark-mode .navbar {
+  background-color: #111827; /* Darker background for dark mode */
+  color: #d1d5db; /* Light gray text for dark mode */
+}
+
+.dark-mode .navbar-links a {
+  color: #d1d5db; /* Light gray text for dark mode links */
+}
+
+.dark-mode .navbar-links a:hover {
+  color: #34d399; /* Lighter emerald color for dark mode */
+}
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Dark Mode Hamburger Menu */
+.dark-mode .menu-toggle {
+  color: #d1d5db; /* Light gray color for dark mode */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-direction: column;
+    background-color: #1e3a8a; /* Dark blue background */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    transform: translateY(-100%);
+    opacity: 0;
+    display: flex;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .navbar-links.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .dark-mode .navbar-links {
+    background-color: #111827; /* Darker background for mobile dark mode */
+  }
+}
