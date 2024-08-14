@@ -1,7 +1,7 @@
 
 import React from 'react';
 import './Hero.css'; // Separate CSS file for Hero component
-import profileImage from '../assets/SATYA.jpg'; // Adjust the path if needed
+import profileImage from '../assets/nitin-removebg.png'; // Adjust the path if needed
 
 const Hero = () => {
   return (
@@ -23,12 +23,13 @@ const Hero = () => {
         <p className="text-center">
           I am your friendly neighborhood osm developer...
         </p>
+        <p className="tex">
+          I am K NITIN SATYA
+        </p>
       </div>
       <div className="flex-1">
         <img src={profileImage} alt="Profile" className="profile-image" />
-		<p className="text-center">
-          I am K NITIN SATYA
-        </p>
+		
       </div>
     </section>
   );

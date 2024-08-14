@@ -1,15 +1,17 @@
 /* Contact.css */
 
 /* General Styles */
-body {
+.grap {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+ 
 }
 
 /* Contact Section */
 #contact {
   padding: 2rem;
+  
 }
 
 h2 {
@@ -20,6 +22,7 @@ h2 {
 .my-40 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
+  
 }
 
 .max-w-5xl {
