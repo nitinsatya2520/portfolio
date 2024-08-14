@@ -15,7 +15,7 @@ const Navbar = () => {
       </button>
       <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
         <li>
-          <Link to="/" onClick={handleToggle}>Home</Link>
+          <Link to="/hero" onClick={handleToggle}>Home</Link>
         </li>
         <li>
           <Link to="/education" onClick={handleToggle}>Education</Link>
