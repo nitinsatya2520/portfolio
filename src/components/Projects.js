@@ -5,6 +5,7 @@ import weather from '../assets/weather.png';
 import qr from '../assets/qr.png';
 import convertor from '../assets/converter.png';
 import kns from "../assets/KNS.png";
+import movie from "../assets/movie app.png";
 
 // Include any additional images here if needed
 // import teddyTracy from '../assets/teddyTracy.png';
@@ -105,6 +106,24 @@ const Projects = ({ darkMode }) => {
           </p>
         </div>
       </div>
+
+      <div className={`project-card p-10 flex flex-col lg:flex-row-reverse max-w-5xl mx-auto shadow transition hover:shadow-xl hover:scale-[102%] w-full ${darkMode ? 'bg-gray-800' : 'bg-emerald-200'}`}>
+        <div className="w-80 rounded">
+          <a href="https://movie-series-app-vert.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full h-full">
+            <img src={movie} alt="QR Code Generator" className="project-image" loading="lazy" />
+          </a>
+        </div>
+        <div className="flex flex-col align-center mx-auto gap-4 justify-center flex-1">
+          <h2 className={`font-bold text-3xl text-center ${darkMode ? 'text-emerald-300' : 'text-emerald-500'}`}>
+            <a className="project-link" href="https://movie-series-app-vert.vercel.app/" target="_blank" rel="noopener noreferrer">Movie and Series App</a>
+          </h2>
+          <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            suggesting Movies and Series
+          </p>
+        </div>
+      </div>
+
+      
 
       {/* New Projects */}
 
