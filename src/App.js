@@ -16,7 +16,7 @@ import Skills from './components/Skills';
 import Internships from './pages/Internships';
 import Contact from './components/Contact';
 import ToggleDarkModeButton from './components/ToggleDarkModeButton';
-
+import Hero from './components/Hero';
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -30,7 +30,8 @@ function App() {
         <Navbar />
         
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Hero />} />
+          <Route path="/hero" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/home" element={<House />} />
           <Route path="/education" element={<Education />} />
