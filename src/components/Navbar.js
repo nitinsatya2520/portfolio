@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './Navbar.css';
-
+import Nii from '../assets/nitin-removebg.svg'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -9,7 +9,13 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${isOpen ? 'open' : ''}`}>
-      <div className="navbar-logo">KADAVAKOLLU NITIN SATYA</div>
+      
+      <div className="navbar-logo">
+        <a href="/">
+      <img src={Nii} alt="QR Code Generator" className="profile-imageLl" loading="lazy" /></a>
+      KADAVAKOLLU NITIN SATYA
+      
+        </div>
       <button className="menu-toggle" onClick={handleToggle}>
         ☰
       </button>
