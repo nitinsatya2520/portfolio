@@ -1,0 +1,152 @@
+.certifications-section {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.certifications-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333; /* Dark text color for light mode */
+    font-weight: 600;
+}
+
+.certifications-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.certification-item {
+    background: #f3f3f3; /* Light background for light mode */
+    padding: 40px 40px;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+}
+
+.certification-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.certification-logo { /* Adjust width to be responsive */
+    width: 600px; /* Cap maximum width */
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.badges-section {
+    margin-bottom: 5px; /* Space between badges and the certifications list */
+}
+
+.badges-section h3 {
+   
+    color: #0c0c0c; /* Color for the heading in light mode */
+}
+
+.badge-container {
+    display: flex; /* Use flexbox to arrange badges */
+    justify-content: center; /* Center badges horizontally */
+    flex-wrap: wrap; /* Allow badges to wrap to the next line */
+    gap: 20px; /* Space between badges */
+}
+
+.certification-badge {
+    width: auto; /* Fixed width for badges */
+    height: 100px; /* Keep aspect ratio */
+    object-fit: contain; /* Ensure badge fits without distortion */
+    transition: transform 0.3s; /* Add a transition effect for hover */
+}
+
+.certification-badge:hover {
+    transform: scale(1.1); /* Slightly enlarge badge on hover */
+}
+
+/* Dark Mode Support for Badges */
+.dark-mode .badges-section h3 {
+    color: #e2e8f0; /* Light color for badges heading in dark mode */
+}
+
+.dark-mode .certification-badge {
+    filter: brightness(0.9); /* Slightly dim badges in dark mode */
+}
+
+
+.certification-details {
+    border-radius: 50px;
+}
+
+.certification-details h3 {
+    margin-top: 0;
+    font-size: 1.75rem;
+    color: #0073e6; /* Color for headings in light mode */
+    margin-bottom: 10px;
+}
+
+.certification-details p {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555; /* Color for text in light mode */
+}
+
+.certification-details p strong {
+    font-size: 1.25rem;
+    color: #333; /* Color for strong text in light mode */
+}
+
+/* Dark Mode Support */
+.dark-mode .certifications-section h2 {
+    color: #e2e8f0; /* Light color for headings in dark mode */
+}
+
+.dark-mode .certification-item {
+    background: #2d3748; /* Dark background for certification items in dark mode */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for dark mode */
+}
+
+.dark-mode .certification-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Darker hover shadow */
+}
+
+.dark-mode .certification-details h3 {
+    color: #63b3ed; /* Light color for headings in dark mode */
+}
+
+.dark-mode .certification-details p {
+    color: #e2e8f0; /* Lighter text color for details in dark mode */
+}
+
+.dark-mode .certification-details p strong {
+    color: #edf2f7; /* Light color for highlighted text in dark mode */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .certification-item {
+        padding: 20px; /* Reduce padding on smaller screens */
+        flex-direction: column; /* Stack logo and details vertically */
+        align-items: center;
+    }
+
+    .certification-logo {
+        max-width: 300px; /* Smaller logo for mobile screens */
+    }
+
+    .certification-badge {
+        height: 80px; /* Adjust badge size for smaller screens */
+    }
+
+    .certifications-section h2 {
+        font-size: 2rem; /* Slightly smaller heading */
+    }
+}

@@ -17,6 +17,8 @@ import Internships from './pages/Internships';
 import Contact from './components/Contact';
 import ToggleDarkModeButton from './components/ToggleDarkModeButton';
 import Hero from './components/Hero';
+import Certification from './pages/Certification';
+
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -31,6 +33,7 @@ function App() {
         
         <Routes>
           <Route path="/" element={<Hero />} />
+          <Route path='/certificaion' element={<Certification />}/>
           <Route path="/hero" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/home" element={<House />} />

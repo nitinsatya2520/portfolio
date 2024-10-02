@@ -27,6 +27,9 @@ const Navbar = () => {
           <Link to="/education" onClick={handleToggle}>Education</Link>
         </li>
         <li>
+          <Link to="/certificaion" onClick={handleToggle}>Certification</Link>
+        </li>
+        <li>
           <Link to="/about" onClick={handleToggle}>About</Link>
         </li>
         <li>
