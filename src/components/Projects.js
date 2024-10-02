@@ -6,6 +6,8 @@ import qr from '../assets/qr.png';
 import convertor from '../assets/converter.png';
 import kns from "../assets/KNS.png";
 import movie from "../assets/movie app.png";
+import chat from "../assets/chat.png";
+import music from "../assets/music.png";
 
 // Include any additional images here if needed
 // import teddyTracy from '../assets/teddyTracy.png';
@@ -38,6 +40,40 @@ const Projects = ({ darkMode }) => {
           </p>
         </div>
       </div>
+
+
+      <div className={`project-card p-10 flex flex-col lg:flex-row-reverse max-w-5xl mx-auto shadow transition hover:shadow-xl hover:scale-[102%] w-full ${darkMode ? 'bg-gray-800' : 'bg-emerald-200'}`}>
+        <div className="w-80 rounded">
+          <a href="https://kns-chat-app.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full h-full">
+            <img src={chat} alt="Converter App" className="project-image" loading="lazy" />
+          </a>
+        </div>
+        <div className="flex flex-col align-center mx-auto gap-4 justify-center flex-1">
+          <h2 className={`font-bold text-3xl text-center ${darkMode ? 'text-emerald-300' : 'text-emerald-500'}`}>
+            <a className="project-link" href="https://kns-chat-app.vercel.app/" target="_blank" rel="noopener noreferrer">KNS Chat App</a>
+          </h2>
+          <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            This is a project built on React which allows you to group chat from unlimited people and allows you to delect it,tracks your progress in DSA and stores that in local storage.The app fetches messages every 5 seconds and ensures that new messages appear at the top of the chat window. You can easily switch between chat and this About page using the navigation links.
+          </p>
+        </div>
+      </div>
+
+      <div className={`project-card p-10 flex flex-col lg:flex-row-reverse max-w-5xl mx-auto shadow transition hover:shadow-xl hover:scale-[102%] w-full ${darkMode ? 'bg-gray-800' : 'bg-emerald-200'}`}>
+        <div className="w-80 rounded">
+          <a href="https://kns-music.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full h-full">
+            <img src={music} alt="Converter App" className="project-image" loading="lazy" />
+          </a>
+        </div>
+        <div className="flex flex-col align-center mx-auto gap-4 justify-center flex-1">
+          <h2 className={`font-bold text-3xl text-center ${darkMode ? 'text-emerald-300' : 'text-emerald-500'}`}>
+            <a className="project-link" href="https://kns-music.vercel.app/" target="_blank" rel="noopener noreferrer">Converter App</a>
+          </h2>
+          <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            This is a project built on React which tracks plays music and stores that in local storage.
+          </p>
+        </div>
+      </div>
+
 
       {/* Project 2 */}
       <div className={`project-card p-10 flex flex-col lg:flex-row-reverse max-w-5xl mx-auto shadow transition hover:shadow-xl hover:scale-[102%] w-full ${darkMode ? 'bg-gray-800' : 'bg-emerald-200'}`}>

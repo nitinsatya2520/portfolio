@@ -9,6 +9,13 @@ const Internships = () => {
             year: "Summer 2024",
             description: "Worked on developing and optimizing Fronted and backend services, implemented new features, and collaborated with the team to improve the overall performance of the application.",
             logo: "R.png"
+        },
+        {
+            company: "Edu Skills",
+            position: " Cloud development Intern (Virtual)",
+            year: "Spring 2024",
+            description: "Worked on developing and optimizing has successfully completed IO weeks Cloud Virtuat Internship During January - March 2024, and collaborated with the team to improve the overall performance of the application.aws academy",
+            logo: "edu.jpeg"
         }
         // Add more internship experiences as needed
     ];

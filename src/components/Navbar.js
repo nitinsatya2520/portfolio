@@ -27,19 +27,19 @@ const Navbar = () => {
           <Link to="/education" onClick={handleToggle}>Education</Link>
         </li>
         <li>
-          <Link to="/certificaion" onClick={handleToggle}>Certification</Link>
+          <Link to="/project" onClick={handleToggle}>Projects</Link>
         </li>
         <li>
-          <Link to="/about" onClick={handleToggle}>About</Link>
+          <Link to="/internships" onClick={handleToggle}>Internships</Link>
+        </li>
+        <li>
+          <Link to="/certificaion" onClick={handleToggle}>Certification</Link>
         </li>
         <li>
           <Link to="/skills" onClick={handleToggle}>Skills</Link>
         </li>
         <li>
-          <Link to="/project" onClick={handleToggle}>Projects</Link>
-        </li>
-        <li>
-          <Link to="/internships" onClick={handleToggle}>Internships</Link>
+          <Link to="/about" onClick={handleToggle}>About</Link>
         </li>
         <li>
           <Link to="/contact" onClick={handleToggle}>Contact</Link>
