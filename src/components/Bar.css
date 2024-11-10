@@ -1,0 +1,119 @@
+/* src/components/Navbar.css */
+
+.bar {
+    position: fixed;
+    left: 0;
+    width:fit-content;
+    height:100%;
+    background-color: #ffffff0e; /* Dark blue background */
+    color: #fff;
+    display: flex;
+    
+    z-index: 1000;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .bar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .bar-links {
+    list-style: none;
+    margin-top: 30px;
+    display:block;
+    
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .bar-links li {
+    margin-top: 2.5rem;
+    cursor: pointer;
+    color: #05070c;
+    border:#d1d5db;
+    padding: 8px 16px;
+    background: #0e165ce0;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .profile-imageLl {
+    width: 30px;
+    height: 20px;
+    
+  }
+  .bar-links a {
+    color: #fff;
+    text-decoration: none;
+    
+    font-size:small;
+    transition: color 0.3s;
+  }
+  
+  .bar-links a:hover {
+    color: #10b981; /* Emerald color */
+  }
+  
+  /* Dark Mode Styles */
+  .dark-mode .bar {
+    background-color: #111827; /* Darker background for dark mode */
+    color: #d1d5db; /* Light gray text for dark mode */
+  }
+  
+  .dark-mode .bar-links a {
+    color: #d1d5db; /* Light gray text for dark mode links */
+  }
+  
+  .dark-mode .bar-links a:hover {
+    color: #34d399; /* Lighter emerald color for dark mode */
+  }
+  
+  /* Hamburger Menu Styles */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Dark Mode Hamburger Menu */
+  .dark-mode .menu-toggle {
+    color: #d1d5db; /* Light gray color for dark mode */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .bar-links {
+      flex-direction: column;
+      background-color: #1e3a8a; /* Dark blue background */
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      transform: translateY(-100%);
+      opacity: 0;
+      display: flex;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+  
+    .bar-links.active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  
+    .bar {
+      flex-direction: column;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  
+    .dark-mode .bar-links {
+      background-color: #111827; /* Darker background for mobile dark mode */
+    }
+  }
+  

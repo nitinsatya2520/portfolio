@@ -32,6 +32,11 @@ const Certification = () => {
             company: "aws academy",
             position: "AWS Academy Graduate - AWS Academy Introduction to Cloud Semester 2",
             logo: "aws i2c.png"
+        },
+        {
+            company: "Salesforce",
+            position: "Salesforce - AI Associate",
+            logo: "ser.png"
         }
     ];
 
@@ -53,6 +58,9 @@ const Certification = () => {
         },
         {
             badge: "aws i1.png"
+        },
+        {
+            badge: "serv.png"
         }
        
     ];

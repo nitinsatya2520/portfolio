@@ -18,6 +18,7 @@ import Contact from './components/Contact';
 import ToggleDarkModeButton from './components/ToggleDarkModeButton';
 import Hero from './components/Hero';
 import Certification from './pages/Certification';
+import Bar from './components/Bar';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -29,7 +30,13 @@ function App() {
   return (
     <Router>
       <div className={`app-container ${darkMode ? 'dark-mode' : ''}`}>
+        <Bar />
         <Navbar />
+
+        <video autoPlay loop muted playsInline className="background-video">
+        <source src="/background.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
         
         <Routes>
           <Route path="/" element={<Hero />} />
