@@ -11,10 +11,11 @@ const Hero = () => {
           justify-center items-center align-center mt-40 
           mb-16 lg:mt-10 max-w-5xl mx-auto lg:gap-0 h-[80vh]"
     >
-      <video autoPlay loop muted playsInline className="background-video">
-        <source src="/background.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      <video autoPlay loop muted playsInline className="background-video" preload="auto">
+  <source src="/background.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
       <div className="flex-1 flex flex-col justify-center items-center gap-5">
         <div>
           
