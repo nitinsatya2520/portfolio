@@ -9,6 +9,11 @@ const Certification = () => {
             logo: "AWS.png"
         },
         {
+            company: "IBM",
+            position: "IBMCE CEPYT1IN Certificate",
+            logo: "IBMC.png"
+        },
+        {
             company: "Oracle Certified Professional",
             position: "Oracle Cloud Infrastructure 2024 Generative AI Certified Professional",
             logo: "oracle.png"
@@ -61,6 +66,9 @@ const Certification = () => {
         },
         {
             badge: "serv.png"
+        },
+        {
+            badge: "IBM.png"
         }
        
     ];
