@@ -29,13 +29,21 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   .time-module {
-    padding: 20px 15px; /* Adjusted padding for better mobile touch interaction */
-    font-size: 1rem; /* Slightly smaller font size for mobile */
-    bottom: 160px; /* Adjusted position from the bottom */
-    right: 10px; /* Adjusted position from the right */
-    border-radius: 50px; /* Slightly smaller border radius for mobile */
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Less pronounced shadow for mobile */
+    padding: 10px 15px; /* Adjusted padding for better touch interaction */
+      font-size: auto; /* Slightly smaller font size for mobile */
+      bottom: 130px; /* Adjusted position from the bottom */
+      right: 0px; /* Adjusted position from the right */
+      border-radius: 10px; /* Slightly smaller border radius for mobile */
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Less pronounced shadow for mobile */
   }
+
+.time-module h3 {
+    font-size: 0.8rem; /* Slightly smaller heading for mobile */
+}
+
+.time-module p {
+    font-size: 0.7rem; /* Slightly smaller paragraph text */
+}
 }
 
 @media (max-width: 480px) {
