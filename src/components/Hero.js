@@ -19,7 +19,7 @@ const Hero = () => {
           <h4>Hi and welcome to My Portfolio Website</h4>
           <h2>I am K NITIN SATYA</h2>
         </div>
-        <h4>B.Tech     B.B.A</h4>
+        <h4>B.Tech   ,  B.B.A</h4>
         <p>I am your friendly neighborhood</p>
         <p>osm developer...</p>
       </div>
