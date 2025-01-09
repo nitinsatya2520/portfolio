@@ -10,31 +10,33 @@ h2 {
   margin-bottom: 2rem;
   font-family: 'Arial', sans-serif;
   color: #053396; /* Dark blue color */
+  text-align: center;
 }
 
 .project-card {
   margin-bottom: 2rem;
   border-radius: 8px;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   background-color: #f8f9fa; /* Light card background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .project-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .project-image {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 8px 8px 0 0; /* Rounded only on top corners */
 }
 
 .project-link {
   text-decoration: none;
   color: #053396; /* Dark blue color */
+  font-weight: bold;
   transition: color 0.3s ease-in-out;
 }
 
@@ -45,30 +47,28 @@ h2 {
 /* Flexbox Layout */
 .project-card .flex {
   display: flex;
+  flex-wrap: wrap; /* Wrap content for smaller screens */
+  gap: 1rem;
 }
 
-.project-card .flex-col {
+.flex-col {
   flex-direction: column;
 }
 
-.project-card .lg\:flex-row {
+.lg\:flex-row {
   flex-direction: row;
 }
 
-.project-card .lg\:flex-row-reverse {
+.lg\:flex-row-reverse {
   flex-direction: row-reverse;
 }
 
-.project-card .justify-center {
+.justify-center {
   justify-content: center;
 }
 
-.project-card .align-center {
+.align-center {
   align-items: center;
-}
-
-.project-card .gap-4 {
-  gap: 1rem;
 }
 
 /* Responsive Design */
@@ -77,13 +77,27 @@ h2 {
     flex-direction: column;
   }
 
-  .project-card .lg\:flex-row,
-  .project-card .lg\:flex-row-reverse {
+  .lg\:flex-row,
+  .lg\:flex-row-reverse {
     flex-direction: column;
   }
 }
 
-/* Text Styling */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  #project {
+    padding: 2rem 0;
+  }
+
+  .project-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Utility Classes */
 .text-center {
   text-align: center;
 }
@@ -148,7 +162,7 @@ h2 {
 
 .dark-mode .project-card {
   background-color: #2d3748; /* Darker card background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Darker shadow */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode .project-link {
@@ -160,15 +174,7 @@ h2 {
 }
 
 .dark-mode .text-emerald-500 {
-  color: #9ae6b4; /* Light green color in dark mode */
-}
-
-.dark-mode .text-gray-300 {
-  color: #e0e0e0; /* Light gray color in dark mode */
-}
-
-.dark-mode .text-gray-700 {
-  color: #b0b0b0; /* Medium gray color in dark mode */
+  color: #9ae6b4; /* Light green for dark mode */
 }
 
 .dark-mode .bg-emerald-200 {

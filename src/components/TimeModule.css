@@ -1,7 +1,7 @@
 /* General Styles */
 .time-module {
   background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background for contrast */
-  padding: 40px 10px;
+  padding: 40px 20px; /* Adjusted padding for better balance */
   position: fixed;
   bottom: 210px;
   right: 4px; /* Position it on the right side */
@@ -29,12 +29,19 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   .time-module {
-    padding: 15px 10px; /* Adjusted padding for better touch interaction */
+    padding: 20px 15px; /* Adjusted padding for better mobile touch interaction */
     font-size: 1rem; /* Slightly smaller font size for mobile */
     bottom: 160px; /* Adjusted position from the bottom */
     right: 10px; /* Adjusted position from the right */
     border-radius: 50px; /* Slightly smaller border radius for mobile */
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Less pronounced shadow for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .time-module {
+    padding: 15px 10px; /* Further reduced padding for very small screens */
+    font-size: 0.9rem; /* Smaller font size for very small screens */
   }
 }
 

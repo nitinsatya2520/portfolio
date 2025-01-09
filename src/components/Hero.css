@@ -11,7 +11,6 @@
   margin-right: auto;
   max-height: 100%;
   padding: 0 10px;
-  
 }
 
 #hero .flex-1 {
@@ -51,7 +50,6 @@
   font-family: cursive;
   text-align: center;
   font-size: 2rem;
-  
 }
 
 .profile-image {
@@ -64,33 +62,70 @@
 
 .profile-image:hover {
   transform: translateY(-5px);
-  
+   /* Added shadow on hover */
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
   #hero {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   #hero h2 {
-      font-size: 2.5rem;
+    font-size: 2.5rem;
+  }
+
+  .profile-image {
+    margin-top: 16px; /* Adjusted spacing */
   }
 }
 
 @media (max-width: 768px) {
   #hero {
-      margin-top: 20px;
-      margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
 
   #hero h2 {
-      font-size: 2rem;
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 1.5rem;
   }
 
   .profile-image {
-      width: 150px;
-      height: 150px;
+    width: 150px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero {
+    padding: 0 5px;
+    margin-top: 50px;
+    margin-bottom: 5px;
+  }
+
+  #hero .flex-1{
+    margin-top: 100px;
+  }
+
+  #hero h2 {
+    font-size: 1.8rem;
+  }
+
+  #hero h4 {
+    font-size: 1rem;
+  }
+
+  #hero p {
+    font-size: 1.2rem;
+  }
+
+  .profile-image {
+    width: 400px;
+    margin-top: 12px;
   }
 }
 
@@ -109,10 +144,10 @@
 }
 
 .dark-mode .profile-image {
-   /* Darker border in dark mode */
-  
+  border: 2px solid #e2e8f0; /* Light border for profile image in dark mode */
 }
 
 .dark-mode .profile-image:hover {
-  
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Darker shadow in dark mode */
 }

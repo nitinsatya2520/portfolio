@@ -1,3 +1,4 @@
+/* General Styles */
 .certifications-section {
     text-align: center;
     margin-top: 70px;
@@ -19,12 +20,12 @@
 
 .certification-item {
     background: #f3f3f3; /* Light background for light mode */
-    padding: 40px 40px;
+    padding: 40px;
     width: 90%;
     max-width: 800px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -35,9 +36,10 @@
 .certification-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0; /* Subtle background color change on hover */
 }
 
-.certification-logo { /* Adjust width to be responsive */
+.certification-logo {
     width: 600px; /* Cap maximum width */
     height: auto;
     border-radius: 8px;
@@ -49,29 +51,28 @@
 }
 
 .badges-section h3 {
-   
     color: #0c0c0c; /* Color for the heading in light mode */
 }
 
 .badge-container {
-    display: flex; /* Use flexbox to arrange badges */
+    display: flex;
     justify-content: center; /* Center badges horizontally */
-    flex-wrap: wrap; /* Allow badges to wrap to the next line */
-    gap: 20px; /* Space between badges */
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .certification-badge {
-    width: auto; /* Fixed width for badges */
-    height: 100px; /* Keep aspect ratio */
-    object-fit: contain; /* Ensure badge fits without distortion */
-    transition: transform 0.3s; /* Add a transition effect for hover */
+    width: auto; 
+    height: 100px; 
+    object-fit: contain; 
+    transition: transform 0.3s;
 }
 
 .certification-badge:hover {
-    transform: scale(1.1); /* Slightly enlarge badge on hover */
+    transform: scale(1.05); /* Slightly smaller hover scale */
 }
 
-/* Dark Mode Support for Badges */
+/* Dark Mode Support */
 .dark-mode .badges-section h3 {
     color: #e2e8f0; /* Light color for badges heading in dark mode */
 }
@@ -79,7 +80,6 @@
 .dark-mode .certification-badge {
     filter: brightness(0.9); /* Slightly dim badges in dark mode */
 }
-
 
 .certification-details {
     border-radius: 50px;
@@ -110,24 +110,24 @@
 
 .dark-mode .certification-item {
     background: #2d3748; /* Dark background for certification items in dark mode */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for dark mode */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode .certification-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Darker hover shadow */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .dark-mode .certification-details h3 {
-    color: #63b3ed; /* Light color for headings in dark mode */
+    color: #63b3ed;
 }
 
 .dark-mode .certification-details p {
-    color: #e2e8f0; /* Lighter text color for details in dark mode */
+    color: #e2e8f0;
 }
 
 .dark-mode .certification-details p strong {
-    color: #edf2f7; /* Light color for highlighted text in dark mode */
+    color: #edf2f7;
 }
 
 /* Responsive design adjustments */
@@ -136,10 +136,12 @@
         padding: 20px; /* Reduce padding on smaller screens */
         flex-direction: column; /* Stack logo and details vertically */
         align-items: center;
+        text-align: center; /* Center the text for mobile */
     }
 
     .certification-logo {
-        max-width: 300px; /* Smaller logo for mobile screens */
+        max-width: 80%; /* Make the logo more responsive */
+        height: auto;
     }
 
     .certification-badge {

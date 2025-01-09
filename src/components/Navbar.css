@@ -77,36 +77,63 @@
 .dark-mode .menu-toggle {
   color: #d1d5db; /* Light gray color for dark mode */
 }
-
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
   .navbar-links {
     flex-direction: column;
-    background-color: #1e3a8a; /* Dark blue background */
     position: absolute;
-    top: 60px;
+    top: 100%;
     right: 0;
     width: 100%;
+    background-color: #1e3a8a; /* Dark blue background */
     transform: translateY(-100%);
     opacity: 0;
-    display: flex;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    visibility: hidden;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
   }
 
   .navbar-links.active {
     transform: translateY(0);
     opacity: 1;
+    visibility: visible;
   }
 
-  .navbar {
-    flex-direction: column;
-  }
-
-  .menu-toggle {
-    display: block;
+  .navbar-links a {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+    text-align: left;
   }
 
   .dark-mode .navbar-links {
     background-color: #111827; /* Darker background for mobile dark mode */
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1.25rem;
+  }
+
+  .menu-toggle {
+    font-size: 1.25rem;
+  }
+
+  .navbar-links a {
+    font-size: 1rem;
   }
 }

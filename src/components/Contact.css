@@ -147,3 +147,33 @@ button:hover {
 .dark-mode .contact-details p {
   color: #e2e8f0; /* Lighter text color for contact details in dark mode */
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .contact-link {
+    font-size: 0.875rem; /* Smaller font size for social links */
+  }
+
+  .contact-details p {
+    font-size: 0.9rem; /* Adjust text size in contact details */
+  }
+
+  .profile-im {
+    width: 80px;
+    height: 80px; /* Smaller profile image for mobile view */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-link {
+    font-size: 0.75rem; /* Even smaller font for mobile screens */
+  }
+
+  form {
+    gap: 0.5rem; /* Reduce gap between form fields on mobile */
+  }
+
+  button {
+    padding: 0.4rem 0.8rem; /* Adjust button size for mobile screens */
+  }
+}

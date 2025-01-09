@@ -1,3 +1,4 @@
+/* General Styles */
 .internships-section {
     text-align: center;
     margin-top: 70px;
@@ -24,7 +25,7 @@
     max-width: 800px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -34,6 +35,7 @@
 .internship-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9; /* Subtle background color change on hover */
 }
 
 .internship-logo {
@@ -41,6 +43,11 @@
     height: auto;
     border-radius: 8px;
     object-fit: contain;
+    transition: transform 0.3s; /* Smooth transition for logo on hover */
+}
+
+.internship-logo:hover {
+    transform: scale(1.1); /* Slightly enlarge logo on hover */
 }
 
 .internship-details {
@@ -78,6 +85,11 @@
 .dark-mode .internship-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Darker hover shadow */
+    background-color: #434c56; /* Slight background color change on hover */
+}
+
+.dark-mode .internship-logo {
+    filter: brightness(1.2); /* Increase brightness for logos in dark mode */
 }
 
 .dark-mode .internship-details h3 {
@@ -90,4 +102,34 @@
 
 .dark-mode .internship-details p strong {
     color: #edf2f7; /* Light color for highlighted text in dark mode */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .internship-item {
+        padding: 20px; /* Reduce padding on smaller screens */
+        flex-direction: column; /* Stack logo and details vertically */
+        align-items: center;
+        text-align: center; /* Center text for mobile */
+    }
+
+    .internship-logo {
+        max-width: 50px; /* Make logo slightly smaller on mobile */
+    }
+
+    .internship-details h3 {
+        font-size: 1.5rem; /* Smaller heading on mobile */
+    }
+
+    .internship-details p {
+        font-size: 0.9rem; /* Smaller text size for mobile */
+    }
+
+    .internship-details p strong {
+        font-size: 1.1rem; /* Slightly smaller strong text */
+    }
+
+    .internships-section h2 {
+        font-size: 2rem; /* Slightly smaller heading */
+    }
 }

@@ -1,3 +1,4 @@
+/* General Styles */
 .education-section {
     padding: 40px 20px;
     background-color: #ffffff;
@@ -26,7 +27,7 @@
     max-width: 800px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -36,6 +37,7 @@
 .education-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9; /* Subtle background color change on hover */
 }
 
 .education-logo {
@@ -79,6 +81,11 @@
 
 .dark-mode .education-item:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Darker hover shadow */
+    background-color: #434c56; /* Slight background color change on hover */
+}
+
+.dark-mode .education-logo {
+    filter: brightness(1.2); /* Increase brightness for logos in dark mode */
 }
 
 .dark-mode .education-details h3 {
@@ -91,4 +98,34 @@
 
 .dark-mode .education-details p strong {
     color: #edf2f7; /* Light color for highlighted text */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .education-item {
+        padding: 20px; /* Reduce padding on smaller screens */
+        flex-direction: column; /* Stack logo and details vertically */
+        align-items: center;
+        text-align: center; /* Center text for mobile */
+    }
+
+    .education-logo {
+        max-width: 60px; /* Make logo smaller on mobile */
+    }
+
+    .education-details h3 {
+        font-size: 1.5rem; /* Smaller heading on mobile */
+    }
+
+    .education-details p {
+        font-size: 0.9rem; /* Smaller text size for mobile */
+    }
+
+    .education-details p strong {
+        font-size: 1.1rem; /* Slightly smaller strong text */
+    }
+
+    .education-section h2 {
+        font-size: 2rem; /* Slightly smaller heading */
+    }
 }
