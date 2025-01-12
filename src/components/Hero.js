@@ -1,6 +1,7 @@
 import React from 'react';
 import './Hero.css'; // Separate CSS file for Hero component
 import profileImage from '../assets/nitin-removebg.png'; // Adjust the path if needed
+import profile from '../assets/nbc.png'; // Adjust the path if needed
 
 const Hero = () => {
   return (
@@ -26,7 +27,7 @@ const Hero = () => {
 
       {/* Profile Image */}
       <div className="flex-1">
-        <img src={profileImage} alt="Profile" className="profile-image" />
+        <img src={profile} alt="Profile" className="profile-image" />
       </div>
     </section>
   );
