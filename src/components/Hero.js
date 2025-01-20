@@ -7,12 +7,7 @@ const Hero = () => {
   return (
     <section id="hero">
       {/* Video Background */}
-      <div className="video-container">
-        <video autoPlay loop muted playsInline className="background-video" preload="auto">
-          <source src="/background.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+      
 
       {/* Text and Profile Section */}
       <div className="flex-1">
@@ -23,6 +18,9 @@ const Hero = () => {
         <h4>B.Tech   ,  B.B.A</h4>
         <p>I am your friendly neighborhood</p>
         <p>osm developer...</p>
+        <a href="/KADAVAKOLLU NITIN SATYA resume.pdf" download="K_Nitin_Satya_Resume.pdf" className="download-resume-button">
+          Download Resume
+        </a>
       </div>
 
       {/* Profile Image */}
