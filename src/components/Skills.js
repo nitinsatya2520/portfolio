@@ -1,80 +1,106 @@
-import React, { useState } from 'react';
-import './skills.css';
-import { useSpring, animated } from '@react-spring/web';
+import React, { useState } from "react";
+import "./skills.css";
+import { useSpring, animated } from "@react-spring/web";
 
 const Skills = () => {
+  const [expandedCategory, setExpandedCategory] = useState(null);
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
-  const skills = [
-    { name: "Python", description: "Experienced in Python programming" },
-    { name: "HTML", description: "Proficient in HTML5" },
-    { name: "CSS", description: "Skilled in styling web pages using CSS" },
-    { name: "JavaScript", description: "Experienced with modern JavaScript (ES6+)" },
-    { name: "React", description: "Experienced with React for building user interfaces" },
-    { name: "Next.js", description: "Familiar with Next.js for server-side rendering" },
-    { name: "Machine Learning", description: "Knowledgeable in machine learning algorithms and techniques" },
-    { name: "Data Analysis and Visualization", description: "Skilled in analyzing and visualizing data using various tools" },
-    { name: "Photoshop", description: "Experienced in graphic design and photo editing" },
-    { name: "Illustrator", description: "Proficient in vector graphics design using Illustrator" },
-    { name: "Canva", description: "Skilled in creating designs using Canva" },
-    { name: "Version Control Systems - Git", description: "Experienced with Git for version control" },
-    { name: "TypeScript", description: "Familiar with TypeScript for adding static types to JavaScript" },
-    { name: "Java", description: "Experienced in Java programming" },
-    { name: "C++", description: "Skilled in C++ for high-performance applications" },
-    { name: "Artificial Intelligence", description: "Knowledgeable in AI concepts, including machine learning and neural networks" },
-    { name: "Cyber Security", description: "Experienced in protecting systems from cyber threats and attacks" },
-    { name: "Blockchain Technology", description: "Understanding of blockchain technology and its applications" },
-    { name: "Data Science", description: "Skilled in data analysis, statistical modeling, and data-driven decision making" },
-    { name: "BBA Skills", description: "Business management skills including strategic planning, financial management, and marketing" },
-    { name: "Ruby", description: "Familiar with Ruby and Ruby on Rails" },
-    { name: "Vue.js", description: "Experience with Vue.js for building user interfaces" },
-    { name: "Angular", description: "Knowledgeable in Angular for single-page applications" },
-    { name: "SASS/SCSS", description: "Experienced with SASS/SCSS for advanced CSS styling" },
-    { name: "Docker", description: "Proficient in using Docker for containerization" },
-    { name: "Kubernetes", description: "Knowledgeable in Kubernetes for container orchestration" },
-    { name: "AWS", description: "Familiar with Amazon Web Services for cloud computing" },
-    { name: "Azure", description: "Experienced with Microsoft Azure cloud services" },
-    { name: "GCP", description: "Proficient in Google Cloud Platform services" },
-    { name: "Jenkins", description: "Skilled in using Jenkins for CI/CD pipelines" },
-    { name: "MongoDB", description: "Experienced with MongoDB for NoSQL databases" },
-    { name: "PostgreSQL", description: "Proficient in using PostgreSQL for relational databases" },
-    { name: "SQLite", description: "Familiar with SQLite for lightweight, file-based databases" },
-    { name: "GraphQL", description: "Experience with GraphQL for API queries" },
-    { name: "Firebase", description: "Skilled in using Firebase for real-time databases and authentication" },
-    { name: "WebAssembly", description: "Knowledgeable in WebAssembly for high-performance web applications" },
-    { name: "Project Management", description: "Experience in managing projects using Agile/Scrum methodologies" },
-    { name: "Communication", description: "Effective in both written and verbal communication" },
-    { name: "Problem Solving", description: "Strong problem-solving and critical thinking skills" },
-    { name: "UI/UX Design", description: "Experienced in designing user interfaces and improving user experiences" },
-    { name: "Figma", description: "Proficient in using Figma for UI/UX design" },
-    { name: "Adobe XD", description: "Skilled in Adobe XD for designing and prototyping user interfaces" },
-    { name: "Penetration Testing", description: "Knowledgeable in identifying and fixing security vulnerabilities" },
-    { name: "Cryptography", description: "Experienced in cryptography for secure communication" },
-    { name: "Ethical Hacking", description: "Skilled in ethical hacking to enhance security measures" }
-    
-    
-  ];
+  const skills = {
+    Languages: [
+      { name: "Python", description: "Experienced in Python programming" },
+      { name: "C", description: "Skilled in C" },
+      { name: "JavaScript", description: "Experienced with modern JavaScript (ES6+)" },
+      { name: "HTML", description: "Proficient in HTML5" },
+      { name: "CSS", description: "Skilled in styling web pages using CSS" },
+      { name: "Java", description: "Experienced in Java programming" },
+      { name: "C++", description: "Skilled in C++ for high-performance applications" },
+      { name: "R", description: "Familiar with R" },
+    ],
+    Frameworks: [
+      { name: "React", description: "Experienced with React for building user interfaces" },
+      { name: "Next.js", description: "Familiar with Next.js for server-side rendering" },
+      { name: "Vue.js", description: "Experience with Vue.js for building user interfaces" },
+      { name: "Angular", description: "Knowledgeable in Angular for single-page applications" },
+      { name: "Django", description: "Familiar with Django for web development" },
+      { name: "Flask", description: "Skilled in Flask for lightweight web applications" },
+    ],
+    Tools: [
+      { name: "VS Code", description: "Proficient in using VS Code for development" },
+      { name: "Git", description: "Experienced with Git for version control" },
+      { name: "Docker", description: "Proficient in using Docker for containerization" },
+      { name: "Figma", description: "Proficient in using Figma for UI/UX design" },
+      { name: "Photoshop", category: "tools", description: "Experienced in graphic design and photo editing" },
+      { name: "Canva", category: "tools", description: "Skilled in creating designs using Canva" },
+      { name: "PyCharm", description: "Experienced with PyCharm for Python development" },
+      { name: "Jupyter Notebook", description: "Proficient in using Jupyter Notebook for data science and machine learning" },
+      { name: "Anaconda", description: "Familiar with Anaconda for managing Python environments and dependencies" },
+      { name: "Power BI", description: "Skilled in using Power BI for data visualization and reporting" },
+    ],
+    Platforms: [
+      { name: "AWS", description: "Familiar with Amazon Web Services for cloud computing" },
+      { name: "Firebase", description: "Skilled in using Firebase for real-time databases and authentication" },
+      { name: "Azure", description: "Experienced with Microsoft Azure cloud services" },
+    ],
+    SoftSkills: [
+      { name: "Communication", description: "Effective in both written and verbal communication" },
+      { name: "Problem Solving", description: "Strong problem-solving and critical thinking skills" },
+      { name: "Project Management", description: "Experience in managing projects using Agile/Scrum methodologies" },
+      { name: "Research", description: "Skilled in conducting thorough research for various projects" },
+      { name: "Presentations", description: "Experienced in preparing and delivering presentations" },
+      { name: "Analytics", description: "Skilled in analyzing data and drawing meaningful insights" },
+      { name: "Quick Learner", description: "Able to rapidly acquire new skills and knowledge" },
+      { name: "Teamwork and Collaboration", description: "Excellent at working with teams to achieve common goals" },
+      { name: "Multitasking and Organization", description: "Skilled in managing multiple tasks and staying organized" },
+      { name: "Client Relationships", description: "Experienced in building and maintaining strong client relationships" },
+    ],
+    Databases: [
+      { name: "MongoDB", description: "Experienced with MongoDB for NoSQL databases" },
+      { name: "PostgreSQL", description: "Proficient in using PostgreSQL for relational databases" },
+      { name: "SQLite", description: "Familiar with SQLite for lightweight, file-based databases" },
+      { name: "GraphQL", description: "Experience with GraphQL for API queries" },
+    ],
+  };
 
   const fadeIn = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 500 });
 
+  const toggleCategory = (category) => {
+    setExpandedCategory(expandedCategory === category ? null : category);
+  };
+
   return (
-    <section id='si'>
+    <section id="si">
       <animated.section id="skills" className="skills-section" style={fadeIn}>
         <h2 className="skills-title">My Skills...</h2>
-        <div className="skills-container">
-          {skills.map((skill, index) => (
+        <div className="skills-categories">
+          {Object.keys(skills).map((category, index) => (
             <div
               key={index}
-              className="skill-card"
-              onMouseEnter={() => setHoveredSkill(skill.name)}
-              onMouseLeave={() => setHoveredSkill(null)}
+              className={`category-title ${expandedCategory === category ? "active" : ""}`}
+              onClick={() => toggleCategory(category)}
             >
-              {skill.name}
-              {hoveredSkill === skill.name && (
-                <div className="tooltip">{skill.description}</div>
-              )}
+              {category}
             </div>
           ))}
+        </div>
+        <div className="skills-display">
+          {expandedCategory && (
+            <div className="category-skills">
+              {skills[expandedCategory].map((skill, skillIndex) => (
+                <div
+                  key={skillIndex}
+                  className="skill-card"
+                  onMouseEnter={() => setHoveredSkill(skill.name)}
+                  onMouseLeave={() => setHoveredSkill(null)}
+                >
+                  {skill.name}
+                  {hoveredSkill === skill.name && (
+                    <div className="tooltip">{skill.description}</div>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </animated.section>
     </section>
