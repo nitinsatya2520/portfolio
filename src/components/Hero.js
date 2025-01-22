@@ -18,7 +18,7 @@ const Hero = () => {
         <h4>B.Tech   ,  B.B.A</h4>
         <p>I am your friendly neighborhood</p>
         <p>osm developer...</p>
-        <a href="/KADAVAKOLLU NITIN SATYA RESUME.pdf" download="K_Nitin_Satya_Resume.pdf" className="download-resume-button">
+        <a href="/KADAVAKOLLU NITIN SATYA resume.pdf" download="K_Nitin_Satya_Resume.pdf" className="download-resume-button">
           Download Resume
         </a>
       </div>
