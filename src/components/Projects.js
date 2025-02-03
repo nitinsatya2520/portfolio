@@ -8,6 +8,8 @@ import kns from "../assets/KNS.png";
 import movie from "../assets/movie app.png";
 import chat from "../assets/chat.png";
 import music from "../assets/music.png";
+import ats from "../assets/ats.png";
+
 
 // Include any additional images here if needed
 // import teddyTracy from '../assets/teddyTracy.png';
@@ -44,6 +46,28 @@ const Projects = ({ darkMode }) => {
 
       <div className={`project-card p-10 flex flex-col lg:flex-row-reverse max-w-5xl mx-auto shadow transition hover:shadow-xl hover:scale-[102%] w-full ${darkMode ? 'bg-gray-800' : 'bg-emerald-200'}`}>
         <div className="w-80 rounded">
+          <a href="https://kns-ats-resume-checker.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full h-full">
+            <img src={ats} alt="Converter App" className="project-image" loading="lazy" />
+          </a>
+        </div>
+        <div className="flex flex-col align-center mx-auto gap-4 justify-center flex-1">
+          <h2 className={`font-bold text-3xl text-center ${darkMode ? 'text-emerald-300' : 'text-emerald-500'}`}>
+            <a className="project-link" href="https://kns-ats-resume-checker.vercel.app/" target="_blank" rel="noopener noreferrer">KNS ATS Checker</a>
+          </h2>
+          <p>
+  The ATS Resume Checker is an AI-powered tool designed to help job seekers optimize their resumes for Applicant Tracking Systems (ATS). 
+  It analyzes resumes in real-time by extracting text, detecting key sections (Experience, Skills, Education, etc.), 
+  and matching relevant keywords from job descriptions using NLP (spaCy, TF-IDF). 
+  The system also evaluates formatting issues, ensuring the resume is ATS-friendly. 
+  With WebSockets for live updates and Celery for background processing, this tool provides an accurate resume compatibility score 
+  and actionable feedback to improve job application success rates.
+</p>
+
+        </div>
+      </div>
+
+      <div className={`project-card p-10 flex flex-col lg:flex-row-reverse max-w-5xl mx-auto shadow transition hover:shadow-xl hover:scale-[102%] w-full ${darkMode ? 'bg-gray-800' : 'bg-emerald-200'}`}>
+        <div className="w-80 rounded">
           <a href="https://kns-chat-app.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full h-full">
             <img src={chat} alt="Converter App" className="project-image" loading="lazy" />
           </a>
@@ -74,6 +98,39 @@ const Projects = ({ darkMode }) => {
         </div>
       </div>
 
+
+<div className={`project-card p-10 flex flex-col lg:flex-row-reverse max-w-5xl mx-auto shadow transition hover:shadow-xl hover:scale-[102%] w-full ${darkMode ? 'bg-gray-800' : 'bg-emerald-200'}`}>
+        <div className="w-80 rounded">
+          <a href="https://convertor-wine.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full h-full">
+            <img src={convertor} alt="Converter App" className="project-image" loading="lazy" />
+          </a>
+        </div>
+        <div className="flex flex-col align-center mx-auto gap-4 justify-center flex-1">
+          <h2 className={`font-bold text-3xl text-center ${darkMode ? 'text-emerald-300' : 'text-emerald-500'}`}>
+            <a className="project-link" href="https://convertor-wine.vercel.app/" target="_blank" rel="noopener noreferrer">Converter App</a>
+          </h2>
+          <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            This is a project built on React which tracks your progress in DSA and stores that in local storage.
+          </p>
+        </div>
+      </div>
+
+      {/* Project 3 */}
+      <div className={`project-card p-10 flex flex-col lg:flex-row-reverse max-w-5xl mx-auto shadow transition hover:shadow-xl hover:scale-[102%] w-full ${darkMode ? 'bg-gray-800' : 'bg-emerald-200'}`}>
+        <div className="w-80 rounded">
+          <a href="https://weather-tau-gules.vercel.app/" target="_blank" rel="noopener noreferrer" className="w-full h-full">
+            <img src={weather} alt="Weather App" className="project-image" loading="lazy" />
+          </a>
+        </div>
+        <div className="flex flex-col align-center mx-auto gap-4 justify-center flex-1">
+          <h2 className={`font-bold text-3xl text-center ${darkMode ? 'text-emerald-300' : 'text-emerald-500'}`}>
+            <a className="project-link" href="https://weather-tau-gules.vercel.app/" target="_blank" rel="noopener noreferrer">Weather App</a>
+          </h2>
+          <p className={`${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+            A weather forecasting app built using React.
+          </p>
+        </div>
+      </div>
 
       {/* Project 2 */}
       <div className={`project-card p-10 flex flex-col lg:flex-row-reverse max-w-5xl mx-auto shadow transition hover:shadow-xl hover:scale-[102%] w-full ${darkMode ? 'bg-gray-800' : 'bg-emerald-200'}`}>
