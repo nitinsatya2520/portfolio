@@ -2,7 +2,7 @@
 #about {
   padding: 2rem;
   margin-bottom: 3rem;
-  background: url('../assets/nitin.jpg') no-repeat center center;
+  background: url('../assets/soitlong.jpg') no-repeat center center;
   background-size: cover;
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -55,7 +55,7 @@
 
 /* Dark Mode Support */
 .dark-mode #about {
-  background: url('../assets/nitin.jpg') no-repeat center center;
+  background: url('../assets/soitlong.jpg') no-repeat center center;
   background-size: cover;
   color: #e0e0e0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
