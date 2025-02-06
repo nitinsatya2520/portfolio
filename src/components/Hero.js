@@ -11,7 +11,7 @@ const Hero = () => {
 
       {/* Text and Profile Section */}
       <div className="flex-1">
-        <div>
+        <div className="fl">
           <h4>Hi and welcome to My Portfolio Website</h4>
           <h2>I am K NITIN SATYA</h2>
         </div>

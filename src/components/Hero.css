@@ -2,7 +2,7 @@
 #hero {
   padding: 2rem;
   margin-bottom: 3rem;
-  background: url('../assets/soitlong.jpg') no-repeat center center;
+  background: url('../assets/hero.png') no-repeat center center;
   background-size: cover;
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -24,8 +24,21 @@
   gap: 20px;
 }
 
-#hero h4 {
+#hero .fl {
+  background-color: #ffffff;
   
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+
+#hero h4 {
+  color: #008d92;
   text-align: center;
   font-size: 1.25rem;
   font-weight: bold;
@@ -106,15 +119,23 @@
 
 @media (max-width: 480px) {
   #hero {
+    background: url('../assets/herom.png') no-repeat center;
+    background-size: cover;
     padding: 0 5px;
+    width: 100%;
     margin-top: 50px;
-    margin-bottom: 5px;
+    height: fit-content;
+  }
+  #hero .fl {
+    background-color: #ffffff;
     
   }
 
   #hero .flex-1{
-    margin-top: 400px;
-    background-color: #0000008e;
+    
+    top: 0px;
+    margin-bottom: 300px;
+    background-color: #00000000;
     border-radius: 50px;
   }
 
@@ -123,17 +144,19 @@
   }
 
   #hero h4 {
+    
     font-size: 1rem;
   }
 
   #hero p {
-    color: #e2e8f0;
+    background-color: #00000000;
+    color: #000000;
     font-size: 1.2rem;
   }
 
   .profile-image {
-    width: 400px;
-    margin-top: 12px;
+    width: 0px;
+    height: 0px;
   }
 }
 
@@ -141,7 +164,7 @@
 .dark-mode #hero {
   padding: 2rem;
   margin-bottom: 3rem;
-  background: url('../assets/soitlong.jpg') no-repeat center center;
+  background: url('../assets/herod.png') no-repeat center center;
   background-size: cover;
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
