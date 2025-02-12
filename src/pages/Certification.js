@@ -9,6 +9,11 @@ const Certification = () => {
             logo: "AWS.png"
         },
         {
+            company: "Aviatrix",
+            position: "Aviatrix Certified Multicloud Network Associate",
+            logo: "multi.png"
+        },
+        {
             company: "IBM",
             position: "IBMCE CEPYT1IN Certificate",
             logo: "IBMC.png"
@@ -57,6 +62,9 @@ const Certification = () => {
         },
         {
             badge: "oracle2.png"
+        },
+        {
+            badge: "multicloud.png"
         },
         {
             badge: "aws ca.png"
