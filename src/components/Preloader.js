@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import './Preloader.css';
 
-const tags = ["Nitin", "Satya", "Developer", "Designer", "Creator", "Engineer", "Techverra"];
+const tags = ["Nitin", "Nitin","Satya", "Developer", "Designer", "Creator", "Engineer", "Techverra"];
 
 const Preloader = () => {
   const [visibleTags, setVisibleTags] = useState([]);
