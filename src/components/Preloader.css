@@ -14,7 +14,11 @@
   gap: 1.5rem;
   z-index: 9999;
   overflow: hidden;
+<<<<<<< HEAD
   animation: fadeOutContainer 0.5s ease-out 5.5s forwards;
+=======
+  animation: fadeOutContainer 0.5s ease-out 3.5s forwards;
+>>>>>>> fc37c3d51db17feb85e8c1dfb8c2aecea50f4370
 }
 
 .zoom-text {
