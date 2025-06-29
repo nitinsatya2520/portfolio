@@ -19,16 +19,29 @@ import ToggleDarkModeButton from './components/ToggleDarkModeButton';
 import Hero from './components/Hero';
 import Certification from './pages/Certification';
 import Bar from './components/Bar';
+import Preloader from './components/Preloader';
 
 function App() {
+  const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
+
+  // Handle dark mode toggle
   useEffect(() => {
-  document.body.classList.toggle('dark-mode', darkMode);
-}, [darkMode]);
+    document.body.classList.toggle('dark-mode', darkMode);
+  }, [darkMode]);
+
+  // Preloader timeout
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000); // 2 seconds
+    return () => clearTimeout(timer);
+  }, []);
 
   const toggleDarkMode = () => {
     setDarkMode(prevMode => !prevMode);
   };
+
+  // Show Preloader before rendering the app
+  if (loading) return <Preloader />;
 
   return (
     <Router>
@@ -37,13 +50,13 @@ function App() {
         <Navbar />
 
         <video autoPlay loop muted playsInline className="background-video">
-        <source src="/background.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-        
+          <source src="/background.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path='/certificaion' element={<Certification />}/>
+          <Route path="/certificaion" element={<Certification />} />
           <Route path="/hero" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/home" element={<House />} />
@@ -53,6 +66,7 @@ function App() {
           <Route path="/internships" element={<Internships />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+
         <TimeModule />
         <WeatherModule apiKey="03f7fb2a6ffa9af4e20414dc73edb7a3" city="Delhi" />
         <Footer />

@@ -85,3 +85,9 @@
     display: none;
   }
 }
+
+@media (max-with: 768px) {
+  .bar {
+    display: none;
+  }
+}
