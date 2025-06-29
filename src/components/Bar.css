@@ -91,3 +91,9 @@
     display: none;
   }
 }
+
+@media (max-with: 600px) {
+  .bar {
+    display: none;
+  }
+}
