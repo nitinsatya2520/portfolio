@@ -1,64 +1,122 @@
-/* General Styles */
 .time-module {
-  background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background for contrast */
-  padding: 40px 20px; /* Adjusted padding for better balance */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8px 14px;
   position: fixed;
-  bottom: 210px;
-  right: 4px; /* Position it on the right side */
-  width: fit-content;
-  border-radius: 75px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  margin: 10px;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  animation: fadeIn 4s ease-in;
+  bottom: 150px;
+  right: 6px;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.6s ease-out;
+  backdrop-filter: blur(5px);
+  transition: transform 0.25s ease-in-out;
+  max-width: 90vw;
 }
 
 .time-module:hover {
-  background-color: rgba(0, 0, 0, 0.85);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.04);
+  animation: pulse 1.2s infinite;
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
-.time-module p {
-  font-size: 1.2rem;
+.time-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.time-module .time {
+  font-size: 0.85rem;
   color: #ffffff;
   margin: 0;
-  font-family: 'Arial', sans-serif;
+  font-weight: 500;
 }
 
-/* Mobile Styles */
+.time-module .date {
+  font-size: 0.7rem;
+  color: #bbbbbb;
+  margin: 0;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(187, 134, 252, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(187, 134, 252, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(187, 134, 252, 0);
+  }
+}
+
+/* Clock icon rotation */
+.clock-icon {
+  animation: rotateTick 2s linear infinite;
+  transform-origin: center;
+  width: 16px;
+  height: 16px;
+  color: #bb86fc;
+}
+
+/* Clock rotation animation */
+@keyframes rotateTick {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive tweaks */
 @media (max-width: 768px) {
   .time-module {
-    padding: 10px 15px; /* Adjusted padding for better touch interaction */
-      font-size: auto; /* Slightly smaller font size for mobile */
-      bottom: 130px; /* Adjusted position from the bottom */
-      right: 0px; /* Adjusted position from the right */
-      border-radius: 10px; /* Slightly smaller border radius for mobile */
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Less pronounced shadow for mobile */
+    bottom: 150px;
+    right: 4px;
+    padding: 6px 12px;
+    border-radius: 16px;
   }
 
-.time-module h3 {
-    font-size: 0.8rem; /* Slightly smaller heading for mobile */
-}
+  .time-module .time {
+    font-size: 0.75rem;
+  }
 
-.time-module p {
-    font-size: 0.7rem; /* Slightly smaller paragraph text */
-}
+  .time-module .date {
+    font-size: 0.6rem;
+  }
+
+  .clock-icon {
+    width: 14px;
+    height: 14px;
+  }
 }
 
 @media (max-width: 480px) {
   .time-module {
-    padding: 15px 10px; /* Further reduced padding for very small screens */
-    font-size: 0.9rem; /* Smaller font size for very small screens */
+    bottom: 150px;
+    padding: 5px 10px;
   }
-}
 
-/* Keyframes for fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+  .time-module .time {
+    font-size: 0.7rem;
   }
-  to {
-    opacity: 1;
+
+  .time-module .date {
+    font-size: 0.58rem;
   }
 }

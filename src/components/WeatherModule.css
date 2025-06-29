@@ -1,64 +1,72 @@
-/* WeatherModule.css */
 .weather-module {
-  background-color: rgba(0, 0, 0, 0.7); /* Keep dark transparent background for contrast */
-  padding: 40px 25px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 12px 18px;
   position: fixed;
-  bottom: 25px;
-  right: 4px; /* Position it on the right side */
+  bottom: 10px;
+  right: 6px;
   width: fit-content;
-  border-radius: 25px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   text-align: center;
-  margin: 10px;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  animation: fadeIn 2s ease-in;
+  margin: 5px;
+  animation: fadeIn 1.5s ease-in;
+  max-width: 90vw;
 }
 
-.weather-module:hover {
-  background-color: rgba(0, 0, 0, 0.85);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
-
+/* Compact heading and paragraph */
 .weather-module h3 {
-  font-size: 1.2rem; /* Slightly increased size for headings */
+  font-size: 0.9rem;
   color: #ffffff;
-  margin: 0 0 10px 0;
+  margin: 4px 0;
   font-family: 'Arial', sans-serif;
 }
 
 .weather-module p {
-  font-size: 1rem;
+  font-size: 0.75rem;
   color: #ffffff;
-  margin: 5px 0;
+  margin: 2px 0;
   font-family: 'Arial', sans-serif;
 }
 
-/* Mobile Styles */
+/* Animated clock/weather icon */
+.weather-icon {
+  font-size: 1.5rem;
+  color: #bb86fc;
+  animation: pulse 2s infinite ease-in-out;
+  margin-bottom: 4px;
+}
+
+/* Icon animation */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Fade in animation for module */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   .weather-module {
-      padding: 10px 15px; /* Adjusted padding for better touch interaction */
-      font-size: auto; /* Slightly smaller font size for mobile */
-      bottom: 30px; /* Adjusted position from the bottom */
-      right: 0px; /* Adjusted position from the right */
-      border-radius: 10px; /* Slightly smaller border radius for mobile */
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Less pronounced shadow for mobile */
+    padding: 8px 12px;
+    border-radius: 10px;
+    bottom: 20px;
+    right: 4px;
+  }
+
+  .weather-icon {
+    font-size: 1.2rem;
   }
 
   .weather-module h3 {
-      font-size: 0.8rem; /* Slightly smaller heading for mobile */
+    font-size: 0.75rem;
   }
 
   .weather-module p {
-      font-size: 0.7rem; /* Slightly smaller paragraph text */
-  }
-}
-
-/* Keyframes for fade-in animation */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
+    font-size: 0.65rem;
   }
 }

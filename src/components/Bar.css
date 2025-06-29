@@ -10,7 +10,6 @@
   align-items: flex-start;
   z-index: 1000;
   transition: background-color 0.3s ease;
-  
   animation: slideInLeft 0.6s ease-out;
 }
 
@@ -79,15 +78,9 @@
   color: #34d399;
 }
 
-
-@media (max-width: 480px) {
+/* Hide on screens <= 768px */
+@media (max-width: 768px) {
   .bar {
-    display: none;
-  }
-}
-
-@media (max-with: 768px) {
-  .bar {
-    display: none;
+    display: none !important;
   }
 }
