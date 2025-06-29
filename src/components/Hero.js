@@ -1,34 +1,70 @@
-import React from 'react';
-import './Hero.css'; // Separate CSS file for Hero component
-import profileImage from '../assets/nitin-removebg.png'; // Adjust the path if needed
-import profile from '../assets/nbc.png'; // Adjust the path if needed
+import React, { useEffect, useState } from 'react';
+import './Hero.css';
+import profile from '../assets/img.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Typewriter } from 'react-simple-typewriter';
 
 const Hero = () => {
-  return (
-    <section id="hero">
-      {/* Video Background */}
-      
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-      {/* Text and Profile Section */}
-      <div className="flex-1">
-        <div className="fl">
+  useEffect(() => {
+    AOS.init({ duration: 1200, once: true });
+
+    const htmlElement = document.documentElement;
+    const dark = htmlElement.classList.contains('dark-mode');
+    setIsDarkMode(dark);
+  }, []);
+
+  return (
+    <section id="hero" className={isDarkMode ? 'dark-mode' : ''}>
+      <div className="flex-1" data-aos="fade-up">
+        <div className="fl" data-aos="fade-right">
           <h4>Hi and welcome to My Portfolio Website</h4>
-          <h2>I am K NITIN SATYA</h2>
+          <h2>
+  I am K NITIN SATYA
+</h2>
         </div>
-        <h4>B.Tech   ,  B.B.A</h4>
+        <h4>B.Tech , B.B.A</h4>
         <p>I am your friendly neighborhood</p>
-        <p>osm developer...</p>
-        <a href="/KADAVAKOLLU NITIN SATYA resume.pdf" download="K_Nitin_Satya_Resume.pdf" className="download-resume-button">
+        <p className="typewriter-text">
+  <Typewriter
+    words={['Open Source Enthusiast.', 'Creative Developer.', 'Cyber Security Student.', 'Tech Explorer.']}
+    loop
+    cursor
+    cursorStyle="|"
+    typeSpeed={80}
+    deleteSpeed={50}
+    delaySpeed={1500}
+  />
+</p>
+
+        <a
+          href="/KADAVAKOLLU NITIN SATYA resume.pdf"
+          download="K_Nitin_Satya_Resume.pdf"
+          className="download-resume-button"
+          data-aos="zoom-in"
+        >
           Download Resume
         </a>
+
+        <a
+  href="/contact"
+  className="download-resume-button connect-button"
+  data-aos="zoom-in"
+  style={{ background: '#00f7ff', color: '#111', marginLeft: '1rem' }}
+>
+  Let’s Connect
+</a>
+
       </div>
 
-      {/* Profile Image */}
-      <div className="flex-1">
+      <div className="profile-wrapper" data-aos="fade-left">
         <img src={profile} alt="Profile" className="profile-image" />
+        <div className="profile-overlay"></div>
       </div>
     </section>
   );
-}
+};
 
 export default Hero;

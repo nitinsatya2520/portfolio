@@ -2,124 +2,119 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  background: #f4f4f4;
-  color: #333;
+  background: #ffffff;
+  color: #1a1a1a;
   scroll-behavior: smooth;
-  background-image: linear-gradient(180deg, rgba(255,0,0,0), rgb(1, 0, 15));
-  transition: background-color 0.3s, color 0.3s;
+  background-image: linear-gradient(180deg, #ffffff, #f9f9f9);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
-.background-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+
+.dark-mode body,
+body.dark-mode {
+  background: #101010;
+  background-image: linear-gradient(180deg, #000000, #0a0a0a);
+  color: #ccc;
 }
-/* Dark Mode Styles */
-.dark-mode body {
-  background: #181818;
-  color: #e0e0e0;
+
+.app-container {
+  position: relative;
+  z-index: 1;
+}
+
+.dark-mode .app-container {
+  background: #101010;
+  background-image: linear-gradient(180deg, #000000, #0a0a0a);
+  color: #ccc;
 }
 
 header {
-  background: #282c34;
+  background: rgba(20, 20, 20, 0.95);
   color: #fff;
-  padding: 1rem 0;
+  padding: 1rem;
   text-align: center;
   position: sticky;
   top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s, color 0.3s;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #333;
 }
 
 .dark-mode header {
-  background: #121212;
-  color: #e0e0e0;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
+  background: rgba(0, 0, 0, 0.95);
+  border-bottom: 1px solid #444;
 }
 
 nav ul {
-  list-style: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  list-style: none;
+  gap: 1.5rem;
   padding: 0;
 }
 
-nav ul li {
-  margin: 0 1rem;
-}
-
 nav ul li a {
-  color: #61dafb;
+  color: #bb86fc;
+  font-size: 1.1rem;
   text-decoration: none;
-  font-size: 1.2rem;
-  transition: color 0.3s;
-}
-
-.dark-mode nav ul li a {
-  color: #82caff;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color: #21a1f1;
-}
-
-.dark-mode nav ul li a:hover {
-  color: #a1c4fd;
+  color: #ffffff;
 }
 
 main {
-  padding: 2rem;
+  padding: 3rem 1.5rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 section {
-  margin-bottom: 3rem;
+  
   padding: 2rem;
-  background: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
 }
 
 .dark-mode section {
-  background: #1f1f1f;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.04);
 }
 
 section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.2);
 }
 
 section h2 {
-  margin-bottom: 1rem;
   font-size: 2rem;
-  border-bottom: 2px solid #61dafb;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #bb86fc;
   padding-bottom: 0.5rem;
+  color: #222;
 }
 
 .dark-mode section h2 {
-  border-bottom: 2px solid #82caff;
+  color: #ffffff;
 }
 
 section p {
-  margin-bottom: 1rem;
   font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.dark-mode section p {
+  color: #ccc;
 }
 
 section div {
@@ -129,128 +124,100 @@ section div {
 }
 
 section div > div {
-  background: #f9f9f9;
+  background: rgba(255, 255, 255, 0.03);
   padding: 1.5rem;
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dark-mode section div > div {
-  background: #2c2c2c;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
 }
 
 section div > div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(187, 134, 252, 0.2);
 }
 
 footer {
-  background: #282c34;
-  color: #fff;
+  background: rgba(0, 0, 0, 0.85);
+  color: #bbb;
   text-align: center;
   padding: 1rem 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s, color 0.3s;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode footer {
-  background: #121212;
-  color: #e0e0e0;
+  background: rgba(10, 10, 10, 0.95);
+  color: #999;
 }
 
 form {
   display: flex;
   flex-direction: column;
-}
-
-form label {
-  margin-bottom: 0.5rem;
-  font-weight: bold;
+  gap: 1rem;
 }
 
 form input,
 form textarea {
-  margin-bottom: 1rem;
   padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #1a1a1a;
   font-size: 1rem;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+.dark-mode form input,
+.dark-mode form textarea {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+form input:focus,
+form textarea:focus {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.dark-mode form input:focus,
+.dark-mode form textarea:focus {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 form button {
-  padding: 0.75rem;
+  padding: 0.8rem;
+  background: #bb86fc;
   border: none;
-  border-radius: 4px;
-  background: #61dafb;
+  border-radius: 6px;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.dark-mode form button {
-  background: #82caff;
+  transition: background 0.3s ease;
 }
 
 form button:hover {
-  background: #21a1f1;
-  transform: translateY(-3px);
+  background: #a66bfa;
 }
 
-.dark-mode form button:hover {
-  background: #5da1c3;
-}
-
-/* Keyframes for animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Applying animations */
 header, section, footer {
-  animation: fadeIn 1.2s ease-in;
+  animation: fadeIn 1s ease-in;
 }
 
-section {
-  animation: slideIn 2s ease-in;
-}
-
-/* Responsive Styles */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
   nav ul {
     flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin: 0.5rem 0;
-  }
-
-  nav ul li a {
-    font-size: 1rem;
+    gap: 1rem;
   }
 
   section div {
@@ -259,27 +226,8 @@ section {
 }
 
 @media (max-width: 480px) {
-  main {
-    padding: 1rem;
-  }
-
   section {
     padding: 1rem;
-  }
-
-  section h2 {
-    font-size: 1.5rem;
-  }
-
-  form input,
-  form textarea,
-  form button {
-    width: 100%;
-    font-size: 0.9rem;
-  }
-
-  form button {
-    font-size: 1rem;
   }
 
   .background-video {

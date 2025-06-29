@@ -1,128 +1,133 @@
-/* About.css */
+/* Base About styles */
 #about {
-  padding: 2rem;
-  margin-bottom: 3rem;
-  background: url('../assets/soitlong.jpg') no-repeat center center;
-  background-size: cover;
-  color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 4rem 1rem;
   text-align: center;
-  position: relative;
-  margin-top: 100px;
-  height: 100vh;
-}
-
-#about::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 8px;
-}
-
-#about > * {
-  position: relative;
-  z-index: 1;
-}
-
-#about:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+  color: #1a1a1a;
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  max-width: 1000px;
+  margin: auto;
+  transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
 
 #about h2 {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  border-bottom: 2px solid #61dafb;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #7c3aed;
+  border-bottom: 2px solid #7c3aed;
+  display: inline-block;
   padding-bottom: 0.5rem;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
-#about p {
-  margin-top: 30px;
-  margin-left: 100px;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  line-height: 1.8;
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-/* Dark Mode Support */
-.dark-mode #about {
-  background: url('../assets/soitlong.jpg') no-repeat center center;
-  background-size: cover;
-  color: #e0e0e0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode #about::before {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.dark-mode #about h2 {
-  border-bottom: 2px solid #82caff;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  #about {
-    padding: 1.5rem;
-  }
-
-  #about h2 {
-    font-size: 1.8rem;
-  }
-
-  #about p {
-    margin-top: 30px;
-    margin-left: 0px;
-    font-size: 1rem;
-    line-height: 1.6;  /* Slightly adjusted for mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  #about {
-    padding: 1rem;
-  }
-
-  #about h2 {
-    font-size: 1.6rem;
-  }
-
-  #about p {
-    margin-top: 30px;
-    margin-left: 0px;
-    font-size: 0.9rem;
-    line-height: 1.5;  /* Reduced for tighter spacing on small screens */
-  }
-}
-
-/* Profile Image Styling */
-.profile-ime {
-  width: 300px;
-  height: 300px;
-  border-radius: 10%;
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 4px solid #7c3aed;
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Profile Image Hover Effect */
-.profile-ime:hover {
+.profile-img:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.6);
 }
 
-/* Add a subtle hover effect for 'about' section */
-#about:hover {
-  transform: translateY(-5px) scale(1.02);  /* Smooth zoom on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.about-content p {
+  max-width: 600px;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+/* Dark mode styles */
+.dark-mode #about {
+  background: #0f0f0f;
+  color: #e0e0e0;
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode #about h2 {
+  color: #bb86fc;
+  border-color: #bb86fc;
+}
+
+.dark-mode .profile-img {
+  border-color: #bb86fc;
+  box-shadow: 0 0 25px rgba(187, 134, 252, 0.4);
+}
+
+.dark-mode .profile-img:hover {
+  box-shadow: 0 0 30px rgba(187, 134, 252, 0.6);
+}
+
+.dark-mode .about-content p {
+  color: #cccccc;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  #about {
+    padding: 2rem 1rem;
+  }
+
+  #about h2 {
+    font-size: 2rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+/* Typewriter Effect for Heading */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #7c3aed;
+  font-family: monospace;
+  animation: typing 2s steps(12) 1s forwards, blink 0.7s step-end infinite;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 10ch; /* Adjust based on text length */
+  }
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }

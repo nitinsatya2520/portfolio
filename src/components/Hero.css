@@ -1,212 +1,196 @@
-/* src/components/Hero.css */
+/* ===================== BASE HERO SECTION ===================== */
 #hero {
-  padding: 2rem;
-  margin-bottom: 3rem;
-  background: url('../assets/hero.png') no-repeat center center;
-  background-size: cover;
-  color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
   display: flex;
-  
-  margin-top: 90px;
-  height: 90vh;
-}
-
-#hero .flex-1 {
-  
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  padding: 5rem 10%;
+  height: fit-content;
+  background: linear-gradient(to bottom right, #f8f9fa, #e1e5f2); /* Light mode gradient */
+  color: #111;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
 
-#hero .fl {
-  background-color: #ffffff;
-  
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+/* ===================== LEFT CONTENT ===================== */
+.flex-1 {
+  max-width: 50%;
+  z-index: 2;
+  backdrop-filter: blur(6px);
 }
 
-
-
-#hero h4 {
-  color: #008d92;
-  text-align: center;
-  font-size: 1.25rem;
-  font-weight: bold;
+.fl h4 {
+  font-size: 1.2rem;
+  color: #bb86fc;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
-#hero h2 {
-  text-align: center;
-  color: #008d92; /* Emerald color */
+.fl h2 {
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
-.tex {
-  color: #e2e8f0;
-  text-align: center;
-  font-size: 1.125rem;
-  z-index: 1000;
-  top: 100px;
+.flex-1 p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 0.6rem;
 }
 
-#hero p {
-  background-color: #00000023;
-  color: #ffffff;
-  font: bold;
-  
-  font-family: cursive;
-  text-align: center;
-  font-size: 2rem;
+/* ===================== TYPEWRITER ===================== */
+.typewriter-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.25rem;
+  color: #00bcd4;
+  text-shadow: 0 0 10px #00bcd4;
+  margin-top: 0.5rem;
+}
+
+/* ===================== RESUME BUTTON ===================== */
+.download-resume-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.85rem 1.7rem;
+  background: #bb86fc;
+  color: #1a1a1a;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 8px 20px rgba(187, 134, 252, 0.3);
+}
+
+.download-resume-button:hover {
+  background: #a067e3;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(187, 134, 252, 0.5);
+}
+
+/* ===================== CONNECT BUTTON ===================== */
+.connect-button {
+  background: #00f7ff;
+  color: #111;
+  margin-left: 1rem;
+}
+
+.connect-button:hover {
+  background: #00c9d1;
+  transform: scale(1.07);
+  box-shadow: 0 6px 20px rgba(0, 247, 255, 0.5);
+}
+
+/* ===================== RIGHT IMAGE ===================== */
+.profile-wrapper {
+  max-width: 40%;
+  position: relative;
+  z-index: 1;
+  animation: float 4s ease-in-out infinite;
 }
 
 .profile-image {
   width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid #bb86fc;
+  box-shadow: 0 0 40px rgba(187, 134, 252, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-wrapper:hover .profile-image {
+  transform: scale(1.05);
+}
+
+.profile-overlay {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 100%;
   height: 100%;
-  border-radius: 10%;
-  opacity: 0;
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(187, 134, 252, 0.25) 0%, transparent 70%);
+  z-index: -1;
+  animation: pulse 3s infinite;
 }
 
-.profile-image:hover {
-  transform: translateY(-5px);
-   /* Added shadow on hover */
+/* ===================== ANIMATIONS ===================== */
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ===================== DARK MODE ===================== */
+.dark-mode #hero {
+  background: linear-gradient(to bottom right, #0a0a0a, #181820);
+  color: #ffffff;
+}
+
+.dark-mode .fl h2 {
+  color: #ffffff;
+}
+
+.dark-mode .flex-1 p {
+  color: #ccc;
+}
+
+.dark-mode .typewriter-text {
+  color: #00f7ff;
+  text-shadow: 0 0 10px #00f7ff;
+}
+
+.dark-mode .download-resume-button {
+  background: #bb86fc;
+  color: #111;
+}
+
+.dark-mode .download-resume-button:hover {
+  background: #9b68e4;
+}
+
+.dark-mode .connect-button {
+  background: #00f7ff;
+  color: #111;
+}
+
+.dark-mode .connect-button:hover {
+  background: #00c9d1;
+  box-shadow: 0 6px 20px rgba(0, 247, 255, 0.5);
+}
+
+/* ===================== RESPONSIVE LAYOUT ===================== */
+@media screen and (max-width: 768px) {
   #hero {
     flex-direction: column;
+    text-align: center;
+    padding: 4rem 5%;
   }
 
-  #hero h2 {
-    font-size: 2.5rem;
-  }
-
-  .profile-image {
-    margin-top: 16px; /* Adjusted spacing */
-  }
-}
-
-@media (max-width: 768px) {
-  #hero {
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-
-  #hero h2 {
-    font-size: 2rem;
-  }
-
-  #hero p {
-    font-size: 1.5rem;
+  .flex-1, .profile-wrapper {
+    max-width: 100%;
   }
 
   .profile-image {
-    width: 150px;
-    height: auto;
-  }
-}
-
-@media (max-width: 480px) {
-  #hero {
-    background: url('../assets/herom.png') no-repeat center;
-    background-size: cover;
-    padding: 0 5px;
-    width: 100%;
-    margin-top: 50px;
-    height: fit-content;
-  }
-  #hero .fl {
-    background-color: #ffffff;
-    
+    max-width: 280px;
+    margin-top: 2rem;
   }
 
-  #hero .flex-1{
-    
-    top: 0px;
-    margin-bottom: 300px;
-    background-color: #00000000;
-    border-radius: 50px;
+  .fl h2 {
+    font-size: 2.2rem;
   }
 
-  #hero h2 {
-    font-size: 1.8rem;
-  }
-
-  #hero h4 {
-    
+  .typewriter-text {
     font-size: 1rem;
   }
-
-  #hero p {
-    background-color: #00000000;
-    color: #000000;
-    font-size: 1.2rem;
-  }
-
-  .profile-image {
-    width: 0px;
-    height: 0px;
-  }
-}
-
-/* Dark Mode Support */
-.dark-mode #hero {
-  padding: 2rem;
-  margin-bottom: 3rem;
-  background: url('../assets/herod.png') no-repeat center center;
-  background-size: cover;
-  color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  display: flex;
-  
-  margin-top: 90px;
-  height: 90vh;
-}
-
-.dark-mode #hero h2 {
-  color: #5ed8db; /* Lighter Emerald color for dark mode */
-}
-
-.dark-mode #hero h4, 
-.dark-mode #hero p {
-  color: #e2e8f0; /* Lighter text color in dark mode */
-}
-
-.dark-mode .profile-image {
-  border: 2px solid #e2e8f000; /* Light border for profile image in dark mode */
-}
-
-.dark-mode .profile-image:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Darker shadow in dark mode */
-}
-
-
-.download-resume-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #004680; /* Custom theme color */
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.download-resume-button:hover {
-  background-color: #6200ea; /* Darker shade for hover */
 }

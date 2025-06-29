@@ -1,154 +1,189 @@
-/* General Styles */
+/* Color Palette
+Light Mode:
+  - Background: #f9fafb
+  - Primary Text: #1e293b
+  - Accent: #3b82f6 (Blue-500)
+  - Secondary Text: #475569
+  - Card: #ffffff
+  - Shadow: rgba(0, 0, 0, 0.06)
+
+Dark Mode:
+  - Background: #0f172a
+  - Primary Text: #f1f5f9
+  - Accent: #60a5fa (Blue-400)
+  - Secondary Text: #cbd5e1
+  - Card: #1e293b
+  - Shadow: rgba(0, 0, 0, 0.5)
+*/
+
+/* Base Section */
 .certifications-section {
-    text-align: center;
-    margin-top: 70px;
+  text-align: center;
+  margin-top: 4rem;
+  padding: 80px 20px;
+  background: #f9fafb;
+  transition: background 0.3s ease;
 }
 
 .certifications-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #333; /* Dark text color for light mode */
-    font-weight: 600;
+  font-size: 3rem;
+  background: linear-gradient(90deg, #8e2de2, #4a00e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 50px;
+  font-weight: 800;
 }
 
+/* Certification List */
 .certifications-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
 }
 
+/* Card */
 .certification-item {
-    background: #f3f3f3; /* Light background for light mode */
-    padding: 40px;
-    width: 90%;
-    max-width: 800px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    text-align: left;
-    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .certification-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    background-color: #f0f0f0; /* Subtle background color change on hover */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(59, 130, 246, 0.2); /* blue glow */
 }
 
+/* Logo */
 .certification-logo {
-    width: 600px; /* Cap maximum width */
-    height: auto;
-    border-radius: 8px;
-    object-fit: contain;
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.75rem;
 }
 
-.badges-section {
-    margin-bottom: 5px; /* Space between badges and the certifications list */
-}
-
-.badges-section h3 {
-    color: #0c0c0c; /* Color for the heading in light mode */
-}
-
-.badge-container {
-    display: flex;
-    justify-content: center; /* Center badges horizontally */
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.certification-badge {
-    width: auto; 
-    height: 100px; 
-    object-fit: contain; 
-    transition: transform 0.3s;
-}
-
-.certification-badge:hover {
-    transform: scale(1.05); /* Slightly smaller hover scale */
-}
-
-/* Dark Mode Support */
-.dark-mode .badges-section h3 {
-    color: #e2e8f0; /* Light color for badges heading in dark mode */
-}
-
-.dark-mode .certification-badge {
-    filter: brightness(0.9); /* Slightly dim badges in dark mode */
-}
-
+/* Text Details */
 .certification-details {
-    border-radius: 50px;
+  flex: 1;
+  text-align: left;
 }
 
 .certification-details h3 {
-    margin-top: 0;
-    font-size: 1.75rem;
-    color: #0073e6; /* Color for headings in light mode */
-    margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #3b82f6;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
 }
 
 .certification-details p {
-    margin: 10px 0;
-    font-size: 1rem;
-    color: #555; /* Color for text in light mode */
+  font-size: 1rem;
+  color: #475569;
+  margin: 0.25rem 0;
+  transition: color 0.3s ease;
 }
 
 .certification-details p strong {
-    font-size: 1.25rem;
-    color: #333; /* Color for strong text in light mode */
+  color: #1e293b;
+  font-weight: 600;
 }
 
-/* Dark Mode Support */
-.dark-mode .certifications-section h2 {
-    color: #e2e8f0; /* Light color for headings in dark mode */
+/* Badge Section */
+.badges-section {
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.badges-section h3 {
+  font-size: 1.25rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.badge-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.certification-badge {
+  height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.certification-badge:hover {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4));
+}
+
+/* Dark Mode */
+.dark-mode .certifications-section {
+  background: #0f172a;
+}
+
+.dark-mode .certifications-section h2,
+.dark-mode .badges-section h3 {
+  color: #f1f5f9;
 }
 
 .dark-mode .certification-item {
-    background: #2d3748; /* Dark background for certification items in dark mode */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #1e293b;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
 }
 
 .dark-mode .certification-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 14px 32px rgba(96, 165, 250, 0.3);
 }
 
 .dark-mode .certification-details h3 {
-    color: #63b3ed;
+  color: #60a5fa;
 }
 
 .dark-mode .certification-details p {
-    color: #e2e8f0;
+  color: #cbd5e1;
 }
 
 .dark-mode .certification-details p strong {
-    color: #edf2f7;
+  color: #f8fafc;
 }
 
-/* Responsive design adjustments */
+.dark-mode .certification-badge {
+  filter: brightness(0.9);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .certification-item {
-        padding: 20px; /* Reduce padding on smaller screens */
-        flex-direction: column; /* Stack logo and details vertically */
-        align-items: center;
-        text-align: center; /* Center the text for mobile */
-    }
+  .certification-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
 
-    .certification-logo {
-        max-width: 80%; /* Make the logo more responsive */
-        height: auto;
-    }
+  .certification-logo {
+    max-width: 80%;
+  }
 
-    .certification-badge {
-        height: 80px; /* Adjust badge size for smaller screens */
-    }
+  .certification-badge {
+    height: 64px;
+  }
 
-    .certifications-section h2 {
-        font-size: 2rem; /* Slightly smaller heading */
-    }
+  .certifications-section h2 {
+    font-size: 2rem;
+  }
+
+  .certification-details h3 {
+    font-size: 1.25rem;
+  }
 }

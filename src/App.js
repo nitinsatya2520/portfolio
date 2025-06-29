@@ -1,6 +1,6 @@
 // src/App.js
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -22,6 +22,9 @@ import Bar from './components/Bar';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  useEffect(() => {
+  document.body.classList.toggle('dark-mode', darkMode);
+}, [darkMode]);
 
   const toggleDarkMode = () => {
     setDarkMode(prevMode => !prevMode);

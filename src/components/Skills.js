@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState , useEffect , useRef } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import "./skills.css";
 import { useSpring, animated } from "@react-spring/web";
 
 const Skills = () => {
+  useEffect(() => {
+  AOS.init({ duration: 800, once: true });
+}, []);
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
@@ -75,30 +81,35 @@ const Skills = () => {
         <div className="skills-categories">
           {Object.keys(skills).map((category, index) => (
             <div
-              key={index}
-              className={`category-title ${expandedCategory === category ? "active" : ""}`}
-              onClick={() => toggleCategory(category)}
-            >
-              {category}
-            </div>
+  key={index}
+  className={`category-title ${expandedCategory === category ? "active" : ""}`}
+  onClick={() => toggleCategory(category)}
+  data-aos="fade-up"
+  data-aos-delay={index * 100}
+>
+  {category}
+</div>
           ))}
         </div>
         <div className="skills-display">
           {expandedCategory && (
             <div className="category-skills">
               {skills[expandedCategory].map((skill, skillIndex) => (
-                <div
-                  key={skillIndex}
-                  className="skill-card"
-                  onMouseEnter={() => setHoveredSkill(skill.name)}
-                  onMouseLeave={() => setHoveredSkill(null)}
-                >
-                  {skill.name}
-                  {hoveredSkill === skill.name && (
-                    <div className="tooltip">{skill.description}</div>
-                  )}
-                </div>
-              ))}
+  <div
+    key={skillIndex}
+    className="skill-card"
+    onMouseEnter={() => setHoveredSkill(skill.name)}
+    onMouseLeave={() => setHoveredSkill(null)}
+    data-aos="zoom-in-up"
+    data-aos-delay={skillIndex * 100}
+  >
+    {skill.name}
+    {hoveredSkill === skill.name && (
+      <div className="tooltip">{skill.description}</div>
+    )}
+  </div>
+))}
+
             </div>
           )}
         </div>
