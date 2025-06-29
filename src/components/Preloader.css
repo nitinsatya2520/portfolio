@@ -10,32 +10,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   z-index: 9999;
   overflow: hidden;
-  animation: fadeOutContainer 0.5s ease-out 2.8s forwards;
+  animation: fadeOutContainer 0.5s ease-out 3.5s forwards;
 }
 
 .zoom-text {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: bold;
   color: #bb86fc;
-  animation: fadeZoom 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  animation: fadeZoom 0.5s ease-in-out;
 }
 
-/* Combined fade + zoom */
+/* Fade + Zoom Out */
 @keyframes fadeZoom {
   0% {
-    transform: scale(1);
     opacity: 1;
+    transform: scale(1);
   }
   100% {
-    transform: scale(3);
     opacity: 0;
+    transform: scale(3);
   }
 }
 
-/* Hide the preloader after the last tag */
+/* Fade out full preloader */
 @keyframes fadeOutContainer {
   to {
     opacity: 0;
