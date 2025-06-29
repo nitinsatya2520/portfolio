@@ -80,7 +80,7 @@
 
 /* Responsive: Hide on small screens */
 @media (max-width: 768px) {
-  .bar {
-    display: none;
-  }
+  .bar {
+    display: none !important;
+  }
 }
