@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Contact.css';
 import { FaInstagram, FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
-import ntin from '../assets/SATYA.jpg'; // Adjust the path as necessary
+import ntin from '../assets/Pi7_Passport_Photo (1).jpg'; // Adjust the path as necessary
 import emailjs from 'emailjs-com';
 
 const Contact = () => {

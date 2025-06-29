@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import Nii from '../assets/nitin-removebg.svg';
+import Nii from '../assets/suit1-removebg-preview.png';
 
 const Navbar = ({ darkMode }) => {
   const [menuOpen, setIsOpen] = useState(false);

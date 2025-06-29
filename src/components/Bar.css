@@ -36,19 +36,19 @@
 
 .bar-links li {
   text-align: center;
-  background: #1f2937;
+  background: #dfdfdf;
   padding: 10px 20px;
   border-radius: 10px;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .bar-links li:hover {
-  background: #374151;
+  background: #ffffff;
   transform: translateX(4px) scale(1.03);
 }
 
 .bar-links a {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
@@ -77,4 +77,11 @@
 
 .dark-mode .bar-links a:hover {
   color: #34d399;
+}
+
+
+@media (max-width: 480px) {
+  .bar {
+    display: none;
+  }
 }
