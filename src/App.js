@@ -20,7 +20,7 @@ import Hero from './components/Hero';
 import Certification from './pages/Certification';
 import Bar from './components/Bar';
 import Preloader from './components/Preloader';
-
+import Jan from './components/Jan';
 function App() {
   const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
@@ -49,10 +49,7 @@ function App() {
         <Bar />
         <Navbar />
 
-        <video autoPlay loop muted playsInline className="background-video">
-          <source src="/background.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <Jan />
 
         <Routes>
           <Route path="/" element={<Hero />} />
